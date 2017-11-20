@@ -1,0 +1,23 @@
+
+<%= link_to("<< Back to Admin", users_path, :class => 'back-link') %>
+
+<div class="matches index">
+  <h2>List of Matches</h2>
+
+  <%= link_to("Add New Match", new_match_path, :class => 'action new') %>
+
+  <table class="listing" summary="Match list">
+    <tr class="header">
+      <th>Date</th>
+      <th>Student-1</th>
+      <th>Student-2</th>
+    </tr>
+    <% @matches.each do |match| %>
+    <tr>
+      <td><%= match.date %></td>
+      <td><%= match.student1.first_name %></td>
+      <td><%= match.student2.first_name %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
