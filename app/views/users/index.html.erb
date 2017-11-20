@@ -1,0 +1,33 @@
+<!-- <% @page_title = "All Users" %> -->
+
+<!-- <%= link_to("<< Back to Menu", admin_path, :class => 'back-link') %> -->
+
+<div class="users index">
+  <h2>Users list</h2>
+
+  <!-- <%= link_to('Add New User', new_user_path, :class => 'action new') %> -->
+
+  <!-- <div><%= pluralize(@admin_users.size, 'admin user') %> found</div> -->
+
+  <table class="listing" summary="Users list">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <!-- <th>Student to Admin</th> -->
+      <th>Actions</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= mail_to(user.email) %></td>
+      <!-- <td><%= button for boolen (user.admin) %></td> -->
+      <td class="actions">
+        <%= link_to('index match', match_path(user), :class => 'action index') %>
+        <%= link_to('Create new match', create_match_path(user), :class => 'action create') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
