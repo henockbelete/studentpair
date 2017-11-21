@@ -16,8 +16,7 @@
       <td><%= user.last_name %></td>
       <td><%= mail_to(user.email) %></td>
       <td class="actions">
-        <%= link_to('index match', match_path(user), :class => 'action index') %>
-        <%= link_to('Create new match', create_match_path(user), :class => 'action create') %>
+      
       </td>
     </tr>
     <% end %>
