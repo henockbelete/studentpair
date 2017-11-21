@@ -1,72 +1,22 @@
 class UsersController < ApplicationController
+ after_action :authenticate_user!
 
   def index
-    if admin?
-      render 'admin/index'
-    else
-      render 'student/show'
-    end
- # layout 'user'
- #
- # before_action :confirm_logged_in
- #
- #  def index
- #    @users = User.all
- #  end
- #
- #  def show
- #   @user = User.find(params[:id])
- #  end
- #
- #  def new
- #    @user = User.new
- #  end
- #
- #  def create
- #    @user = User.new(user_params)
- #    if @user.save
- #      flash[:notice] = 'Student created successfully.'
- #      redirect_to(users_path)
- #    else
- #      render('new')
- #    end
- #  end
- #
- #  def edit
- #    @user = User.find(params[:id])
- #  end
- #
- #  def update
- #    @user = User.find(params[:id])
- #    if @user.update_attributes(user_params)
- #      flash[:notice] = 'User updated successfully.'
- #      redirect_to(users_path)
- #    else
- #      render('edit')
- #    end
- #  end
- #
- #  def delete
- #    @user = User.find(params[:id])
- #  end
- #
- #  def destroy
- #    @user = User.find(params[:id])
- #    @user.destroy
- #    flash[:notice] = "User destroyed successfully."
- #    redirect_to(users_path)
- #  end
- #
- #  private
- #
- #  def user_params
- #    # Permit :password, but NOT :password_digest
- #    params.require(:user).permit(
- #      :first_name,
- #      :last_name,
- #      :email,
- #      :password
- #    )
- #  end
+    @user = current_user
+    today = Time.now.strftime("%d/%m/%Y")
+    today_matches = Match.where(["day = ?", "#{today}"])
+    @user_today_match = today_matches.find_by_Match1(@user.id)
+    @user_today_match = today_matches.find_by_Match2(@user.id)
+    @user_today_match ||= []
+    user_id = @user.id
+    @user_matches_history = Match.where(["Match1 = ? or Match2 = ?", user_id , user_id])
 
+    @users = User.all
+
+    if current_user.admin?
+      render 'users/admin/index'
+    else
+      render 'users/student/show'
+    end
+  end
 end
