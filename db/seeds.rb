@@ -17,7 +17,7 @@ user = User.create(first_name: "user", last_name: "asdf", email: "user@codaisseu
 
 
 #Matches
-match1 = Match.create(day: "21/11/2017", Match1: 1, Match2: 2)
-match2 = Match.create(day: "22/11/2017", Match1: 1, Match2: 3)
-match3 = Match.create(day: "20/11/2017", Match1: 3, Match2: 2)
-match4 = Match.create(day: "21/11/2017", Match1: 1, Match2: 2)
+match1 = Match.create(day: "21/11/2017", match1: 1, match2: 2)
+match2 = Match.create(day: "22/11/2017", match1: 1, match2: 3)
+match3 = Match.create(day: "20/11/2017", match1: 3, match2: 2)
+match4 = Match.create(day: "21/11/2017", match1: 1, match2: 4)
