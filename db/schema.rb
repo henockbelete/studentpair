@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121094156) do
+ActiveRecord::Schema.define(version: 20171121111859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "matches", force: :cascade do |t|
     t.string "day"
-    t.integer "Match1"
-    t.integer "Match2"
+    t.integer "match1"
+    t.integer "match2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
