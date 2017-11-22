@@ -14,6 +14,20 @@
       <td><%= user.last_name %></td>
       <td><%= mail_to(user.email) %></td>
       <td class="actions">
+
+        <input type="checkbox"  onchange="document.getElementById('btn').disabled = !this.checked"/>
+
+        <script>
+        function checkusers()
+        {
+           var shouldEnable = document.getElementById('checkbox').value == 0;
+           document.getElementById('add_button').disabled = shouldEnable;
+        }
+        </script>
+        <input type="submit" name="btn"  id="btn" value="Admin" disabled/>
+
+
+
       </td>
     </tr>
     <% end %>
