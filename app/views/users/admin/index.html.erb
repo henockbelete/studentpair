@@ -25,15 +25,14 @@
         }
         </script>
         <input type="submit" name="btn"  id="btn" value="Admin" disabled/>
-
-
-
+        <%= link_to "Update", edit_user_path(user), class: "btn btn-default" %>
       </td>
     </tr>
     <% end %>
   </table>
 
   <footer>
+
     <%= link_to "Add matchings", new_match_path %>
     <%= link_to "Show matchings history", matches_path %>
   </footer>

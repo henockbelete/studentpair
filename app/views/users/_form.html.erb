@@ -1,0 +1,24 @@
+
+    <%= form_for @user do |f| %>
+
+    <table summary="Update User">
+      <tr>
+        <th><%= f.label(:first_name) %></th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:last_name) %></th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:email) %></th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label "Change Admin Status" %></th>
+        <td><%= f.check_box :admin, {}, true, false  %></td>
+      </tr>
+
+    </table>
+
+    <% end %>
