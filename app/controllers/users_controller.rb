@@ -33,4 +33,25 @@ class UsersController < ApplicationController
       render 'users/student/show'
     end
   end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+       @user.admin? ? (redirect_to 'users/admin/index') : (redirect_to 'users/student/show')
+    else
+      render 'edit'
+    end
+ end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :admin)
+  end
+
+
+
+
+
 end
