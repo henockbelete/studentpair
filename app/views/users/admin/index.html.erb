@@ -1,5 +1,3 @@
-
-
 <div class="users index">
   <h2>Users list</h2>
 
@@ -16,9 +14,13 @@
       <td><%= user.last_name %></td>
       <td><%= mail_to(user.email) %></td>
       <td class="actions">
-      
       </td>
     </tr>
     <% end %>
   </table>
+
+  <footer>
+    <%= link_to "Add matchings", new_match_path %>
+    <%= link_to "Show matchings history", matches_path %>
+  </footer>
 </div>
