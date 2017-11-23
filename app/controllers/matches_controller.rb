@@ -21,10 +21,11 @@ class MatchesController < ApplicationController
 
     def new
       @match = Match.new
-      @match.matching_algorithm("12/12/2017")
+      debugger
     end
 
     def create
+      debugger
       if @match.save
         redirect_to @matches
       else
