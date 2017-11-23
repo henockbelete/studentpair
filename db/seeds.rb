@@ -10,8 +10,6 @@ Match.delete_all
 
 # Users
 miriam = User.create(first_name: "Miriam", last_name: "asdf", email: "miriam@codaisseurup.com", password: "123456", admin: true)
-wouter = User.create(first_name: "wouter", last_name: "asdf", email: "wouter@codaisseurup.com", password: "123456")
-mat = User.create(first_name: "mat", last_name: "asdf", email: "mat@codaisseurup.com", password: "123456")
 user1 = User.create(first_name: "ola", last_name: "lala", email: "ola@codaisseurup.com", password: "123456")
 user2 = User.create(first_name: "bola", last_name: "baba", email: "bola@codaisseurup.com", password: "123456")
 user3 = User.create(first_name: "cola", last_name: "coco", email: "cola@codaisseurup.com", password: "123456")
@@ -26,10 +24,10 @@ user10 = User.create(first_name: "zola", last_name: "zozo", email: "zola@codaiss
 
 
 #Matches
-match1 = Match.create(day: "21/11/2017", match1: 1, match2: 2)
-match2 = Match.create(day: "22/11/2017", match1: 1, match2: 3)
-match3 = Match.create(day: "20/11/2017", match1: 3, match2: 2)
-match4 = Match.create(day: "21/11/2017", match1: 1, match2: 4)
+# match1 = Match.create(day: "21/11/2017", match1: 1, match2: 2)
+# match2 = Match.create(day: "22/11/2017", match1: 1, match2: 3)
+# match3 = Match.create(day: "20/11/2017", match1: 3, match2: 2)
+# match4 = Match.create(day: "21/11/2017", match1: 1, match2: 4)
 
 #possible_matches
 
