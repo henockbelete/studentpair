@@ -7,7 +7,6 @@ class MatchesController < ApplicationController
         render 'pages/home'
       else
       matches = Match.all
-
       @all_matches = []
       matches.each do |match|
         @all_matches.push(match.day)

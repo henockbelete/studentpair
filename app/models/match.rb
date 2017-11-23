@@ -2,7 +2,7 @@
 
 
   def members_of_class
-   6
+   10
   end
 
   def possible_matches_method
@@ -29,7 +29,7 @@
 
     all_combinations.shuffle!
 
-    while todays_match.size < 6 do
+    while todays_match.size < 10 do
 
       all_combinations.shuffle!
 
@@ -56,7 +56,7 @@
   end
 
   def array_population
-    [1,2,3,4,5,6]
+    [1,2,3,4,5,6,7,8,9,10]
   end
 
 end
