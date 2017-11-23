@@ -1,27 +1,10 @@
   class Match < ApplicationRecord
 
+  def matching_algorithm(matches_array)
 
-  def members_of_class
-   10
-  end
+    rest_of_matches = matches_array
 
-  def possible_matches_method
-
-    array_population.combination(2).to_a
-
-  end
-
-
-  def rest_of_possible_matches
-
-    []
-
-  end
-
-
-  def matching_algorithm
-
-    all_combinations = rest_of_possible_matches
+    all_combinations = matches_array
 
     all_combinations.shuffle!
 
@@ -35,13 +18,13 @@
 
       possible_match = all_combinations.pop
 
-
-
       if (possible_match & todays_match).empty?
 
         todays_match.push(possible_match)
 
         todays_match.flatten!
+
+        rest_of_matches.delete(possible_match)
 
       else
 
@@ -51,12 +34,12 @@
 
     end
 
-    todays_match
+
+
+    return todays_match, rest_of_matches
 
   end
 
-  def array_population
-    [1,2,3,4,5,6,7,8,9,10]
-  end
+
 
 end

@@ -20,17 +20,31 @@ class MatchesController < ApplicationController
 
     def new
       @match = Match.new
-      debugger
     end
 
     def create
-      debugger
+      @match = Match.new(match_params)
+      possible_matches = PossibleMatch.first.possible_matches
+      byebug
+      @todays_match = @match.matching_algorithm(possible_matches)
+      byebug
+      @possible_matches = @match.matching_algorithm()
+      byebug
+
+
       if @match.save
         redirect_to @matches
       else
-        render 'users/admin'
+        render 'users/admin/index.html.erb'
       end
     end
+
+    private
+
+    def match_params
+      params.require(:match).permit(:day )
+    end
+
 
 
 end
