@@ -4,7 +4,7 @@ class PossibleMatch < ApplicationRecord
     [1,2,3,4,5,6,7,8,9,10]
   end
 
-  def members_of_class
+  def self.members_of_class
    10
   end
 

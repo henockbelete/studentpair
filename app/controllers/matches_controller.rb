@@ -23,20 +23,20 @@ class MatchesController < ApplicationController
     end
 
     def create
-      @match = Match.new(match_params)
+      @match = Match.new
       possible_matches = PossibleMatch.first.possible_matches
-      byebug
-      @todays_match = @match.matching_algorithm(possible_matches)
-      byebug
-      @possible_matches = @match.matching_algorithm()
-      byebug
-
-
-      if @match.save
-        redirect_to @matches
-      else
-        render 'users/admin/index.html.erb'
+      @todays_match , @possible_matches = @match.matching_algorithm(possible_matches)
+      current_class_students = PossibleMatch.members_of_class/2
+      current_class_students.times do
+      @match = Match.new(match_params)
+      match_day = @match.day
+        @match.match1 = @todays_match.pop
+        @match.match2 = @todays_match.pop
+        @match.save
       end
+      id = 1
+      poss_match = PossibleMatch.find(id)
+      poss_match = @possible_matches
     end
 
     private
