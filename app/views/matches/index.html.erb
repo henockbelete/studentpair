@@ -1,8 +1,9 @@
 
 
+<%= link_to("<< Back to Admin", users_path, :class => 'back-link') %>
 
 <div class="matches index">
-  <h2>List of Matches</h2>
+  <h2>Lis of Matches</h2>
 
   <%= link_to("Add New Match", new_match_path, :class => 'action new') %>
 
@@ -12,11 +13,9 @@
       <th>Student-1</th>
       <th>Student-2</th>
     </tr>
-    <% @matches.each do |match| %>
+    <% @all_matches.each do |match| %>
     <tr>
-      <td><%= match.day %></td>
-      <td><%= match.student1.first_name %></td>
-      <td><%= match.student2.first_name %></td>
+      <td><%= match %></td>
     </tr>
     <% end %>
   </table>

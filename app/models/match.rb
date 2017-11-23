@@ -1,32 +1,62 @@
-class Match < ApplicationRecord
+  class Match < ApplicationRecord
 
 
   def members_of_class
-   6
+   10
   end
 
-  def matching_algorithm(date)
-    byebug
-    array_of_matches = array_population
-  possible_matches = 5
-    control_array = [1,2,3,4,5,6]
-    control_array.each do |element|
-      next if element = 0
-      array_of_matches[element-1].each do |column|
-        next if column = 0
-        user1 = element-1
-        array_of_matches[element-1][column] = 0
-        user2 = array_of_matches[element-1][column]
-        index = array_of_matches[user1-1].index {|x| x == user2 }
-        array_of_matches[][index] = 0
-      end
+  def possible_matches_method
+
+    array_population.combination(2).to_a
+
   end
-end
+
+
+  def rest_of_possible_matches
+
+    []
+
+  end
+
+
+  def matching_algorithm
+
+    all_combinations = rest_of_possible_matches
+
+    all_combinations.shuffle!
+
+    todays_match = all_combinations.pop
+
+    all_combinations.shuffle!
+
+    while todays_match.size < 10 do
+
+      all_combinations.shuffle!
+
+      possible_match = all_combinations.pop
+
+
+
+      if (possible_match & todays_match).empty?
+
+        todays_match.push(possible_match)
+
+        todays_match.flatten!
+
+      else
+
+        all_combinations.push(possible_match)
+
+      end
+
+    end
+
+    todays_match
+
+  end
 
   def array_population
-    [[2,3,4,5,6],[1,3,4,5,6],[1,2,4,5,6],[1,2,3,5,6],[1,2,3,4,6],[1,2,3,4,5]]
+    [1,2,3,4,5,6,7,8,9,10]
   end
-
-
 
 end

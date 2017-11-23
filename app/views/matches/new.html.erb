@@ -5,13 +5,9 @@
 <div class="matches new">
   <h2>Create Match</h2>
 
-  <%= form_for @match, :url => matches_path do |f| %>
 
-    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <%= render 'form' %>
 
-    <div class="form-buttons">
-      <%= f.submit("Create match") %>
-    </div>
 
   <% end %>
 </div>

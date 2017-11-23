@@ -1,15 +1,16 @@
 
+
+<%= form_for @match do |f| %>
+
 <table summary="Make a new match">
   <tr>
     <th>Date</th>
-    <td><%= f.text_field(:day) %></td>
-  </tr>
-  <tr>
-    <th>Student-1</th>
-
-  </tr>
-  <tr>
-    <th>Student-2</th>
-
+    <td><%= f.text_field :day %></td>
   </tr>
 </table>
+
+<div class="actions">
+  <%= f.submit "Save", class: "btn btn-primary" %>
+</div>
+
+<% end %>
