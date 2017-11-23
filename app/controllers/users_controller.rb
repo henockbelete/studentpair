@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+
     @user = current_user
     today = Time.now.strftime("%d/%m/%Y")
     today_matches = Match.where(["day = ?", "#{today}"])
-
     today_match = today_matches.find_by_match1(@user.id)
     today_match = today_matches.find_by_match2(@user.id) if today_matches.find_by_match1(@user.id).nil?
     if !today_match.nil?
@@ -40,9 +40,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    @users = User.all
     @user = User.find(params[:id])
+
     if @user.update_attributes(user_params)
-       @user.admin? ? (redirect_to 'users/admin/index') : (redirect_to 'users/student/show')
+
     else
       render 'edit'
     end
@@ -54,9 +56,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :admin)
   end
-
-
-
 
 
 end
