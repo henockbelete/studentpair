@@ -16,15 +16,15 @@ class MatchesController < ApplicationController
         @all_matches.push(User.find(id).first_name)
       end
     end
-  end
+   end
 
     def new
       @match = Match.new
-      debugger
+
     end
 
     def create
-      debugger
+
       if @match.save
         redirect_to @matches
       else

@@ -16,9 +16,12 @@
       </tr>
       <tr>
         <th><%= f.label "Change Admin Status" %></th>
-        <td><%= f.check_box :admin, {}, true, false  %></td>
+        <td><%= f.check_box :admin  %></td>
       </tr>
 
     </table>
 
-    <% end %>
+    <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
