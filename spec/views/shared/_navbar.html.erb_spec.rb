@@ -14,3 +14,5 @@ describe "shared/_navbar.html.erb" do
       expect(rendered).to have_content user.admin
     end
   end
+
+  

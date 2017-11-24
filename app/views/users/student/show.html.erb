@@ -5,10 +5,12 @@
 
     <table summary="You Match detail view">
     <tr>
-      <th>Your match today</th>
+      <!-- <th>Your match today is:</th> -->
+    </tr>
+    <tr>
       <td>
         <% if !@user_today_match.nil? %>
-        <%= @user_today_match.first_name %>
+        <%= @user_today_match.first_name.capitalize %>
         <% end %>
       </td>
     </tr>
@@ -17,9 +19,9 @@
     <h2>Your Match History</h2>
     <table summary="Your Match History">
     <tr>
-      <th>Date</th>
+      <!-- <th>Date</th>
       <th>First Name</th>
-      <th>Last Name</th>
+      <th>Last Name</th> -->
     </tr>
     <% @user_match.each do |match| %>
     <tr>
