@@ -6,15 +6,8 @@ class MatchesController < ApplicationController
         flash[:notice] = 'You dont have permission'
         render 'pages/home'
       else
-      matches = Match.all
       @all_matches = []
-      matches.each do |match|
-        @all_matches.push(match.day)
-        id = match.match1
-        @all_matches.push(User.find(id).first_name)
-        id = match.match2
-        @all_matches.push(User.find(id).first_name)
-      end
+      @all_matches = Match.correlate_matches_to_users
     end
    end
 

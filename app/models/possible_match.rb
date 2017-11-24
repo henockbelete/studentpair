@@ -1,7 +1,7 @@
 class PossibleMatch < ApplicationRecord
 
   def array_population
-    [1,2,3,4,5,6,7,8,9,10]
+    [2,3,4,5,6,7,8,9,10,11]
   end
 
   def self.members_of_class
