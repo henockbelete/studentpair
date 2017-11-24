@@ -27,7 +27,6 @@ class MatchesController < ApplicationController
         @match.match1 = @todays_match.pop
         @match.match2 = @todays_match.pop
         @match.save
-        byebug
       end
       id = 1
       poss_match = PossibleMatch.find(id)
