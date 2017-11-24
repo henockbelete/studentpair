@@ -10,16 +10,16 @@ Match.delete_all
 
 # Users
 miriam = User.create(first_name: "Miriam", last_name: "asdf", email: "miriam@codaisseurup.com", password: "123456", admin: true)
-user1 = User.create(first_name: "ola", last_name: "lala", email: "ola@codaisseurup.com", password: "123456")
-user2 = User.create(first_name: "bola", last_name: "baba", email: "bola@codaisseurup.com", password: "123456")
-user3 = User.create(first_name: "cola", last_name: "coco", email: "cola@codaisseurup.com", password: "123456")
-user4 = User.create(first_name: "dula", last_name: "dodo", email: "dula@codaisseurup.com", password: "123456")
-user5 = User.create(first_name: "eula", last_name: "eueu", email: "eula@codaisseurup.com", password: "123456")
-user6 = User.create(first_name: "fula", last_name: "fufu", email: "fula@codaisseurup.com", password: "123456")
-user7 = User.create(first_name: "gula", last_name: "gogo", email: "gula@codaisseurup.com", password: "123456")
-user8 = User.create(first_name: "mula", last_name: "momo", email: "mula@codaisseurup.com", password: "123456")
-user9 = User.create(first_name: "kola", last_name: "koko", email: "kola@codaisseurup.com", password: "123456")
-user10 = User.create(first_name: "zola", last_name: "zozo", email: "zola@codaisseurup.com", password: "123456")
+user1 = User.create(first_name: "Isis", last_name: "van der Plas", email: "isis@codaisseurup.com", password: "123456")
+user2 = User.create(first_name: "Luciana", last_name: "Gonçalves", email: "luciana@codaisseurup.com", password: "123456")
+user3 = User.create(first_name: "Ward", last_name: "Madoyan", email: "ward@codaisseurup.com", password: "123456")
+user4 = User.create(first_name: "Lara", last_name: "Wagner", email: "lara@codaisseurup.com", password: "123456")
+user5 = User.create(first_name: "Tea", last_name: "Teearu", email: "tea@codaisseurup.com", password: "123456")
+user6 = User.create(first_name: "Ha", last_name: "Doan", email: "ha@codaisseurup.com", password: "123456")
+user7 = User.create(first_name: "Jesse", last_name: "Van Der Heijden", email: "jesse@codaisseurup.com", password: "123456")
+user8 = User.create(first_name: "Karlie", last_name: "Lenfeld", email: "karlie@codaisseurup.com", password: "123456")
+user9 = User.create(first_name: "Robin", last_name: "Oh", email: "robin@codaisseurup.com", password: "123456")
+user10 = User.create(first_name: "Anna", last_name: "Ruotanen", email: "anna@codaisseurup.com", password: "123456")
 
 
 
