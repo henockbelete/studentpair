@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Match, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:user1) { create :user }
+  let(:user2) { create :user }
+  let(:user3) { create :user }
+  let(:user4) { create :user }
+
+  it "has no double pairs" do
+    
+  end
+
 end
